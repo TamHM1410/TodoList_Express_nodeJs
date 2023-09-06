@@ -1,0 +1,6 @@
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('database', 'data_username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql' // Đổi thành dialect của CSDL mà bạn đang sử dụng (ví dụ: postgres, sqlite, mssql, ...)
+});
