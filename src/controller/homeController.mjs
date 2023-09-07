@@ -5,6 +5,8 @@ import { getAllUser } from "../service/CRUD.mjs";
 import { getUserById } from "../service/CRUD.mjs";
 import { updateUser } from "../service/CRUD.mjs";
 import { deleteUserbyId } from "../service/CRUD.mjs";
+import { createNewUser } from "../service/userSevice.mjs";
+
 export const handleHelloWord = (req, res) => {
   return res.send("kkk");
 };
@@ -29,11 +31,8 @@ export const addNew = async (req, res) => {
   let email = req.body.email;
   let pass = req.body.pass;
   let userName = req.body.userName;
-  await registerUser(email, pass, userName);
-  // connection.query("select* from User", function (err, results, fields) {
-  //   console.log(results); // results contains rows returned by server
-  //   console.log(fields); // fields contains extra meta data about results, if available
-  // });
+
+  await createNewUser(email, pass, userName);
 
   res.send("success");
 };
